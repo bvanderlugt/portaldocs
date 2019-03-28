@@ -112,9 +112,17 @@ When you are ready for all users to see your experience, you will enable your en
 
 Azure portal onboarding steps listed below assumes that all new services have completed the onboarding meeting with [ibiza-onboarding@microsoft.com](mailTo:ibiza-onboarding@microsoft.com) team and that you have downloaded the Azure portal SDK to start the development of your extension. If you have not had either the onboarding meeting or have developed the extension, please discuss with the Azure portal team on the requirements.
 
-Note : Step 1 and Step 2 below are sequential and required to complete the Portal onboarding. Step 3 is optional unless the onboarding service requires dedicated tokens. 
+__Step 1 and Step 2 below are sequential and required to complete the Portal onboarding__. Step 3 is optional unless the onboarding service requires dedicated tokens.
 
 ## Step 1 - Hosting Service
+
+> ### SLA's (in business days)
+>DOGFOOD     5 days  
+MPAC         7 days  
+PROD         12 days   
+BLACKFOREST  15 days  
+FAIRFAX      15 days  
+MOONCAKE     15 days
 
 To use the Extension Hosting Service after you have developed your extension, you will have to onboard onto the Extension Hosting service separately. You will have to follow the steps in [this document](/portal-sdk/generated/top-extensions-hosting-service.md#) to have your extension to be ready for deploying onto the hosting service. The reason we have the steps below is to let you do these things in parallel. Developers should join the  `Azure Portal Partner Contributors - 19668(19668)` group by using this link: [https://myaccess](https://myaccess). 
 1) Create storage account for each environment 
@@ -155,6 +163,15 @@ Note:  Incorrect or insufficient information in the workitem could delay the onb
 ![storage](./../media/portalfx-extensions-onboarding/validate-hostingsvc-onboarding-prod.png)
 
 ## Step 2 - Portal Framework
+
+> ### SLA's (in business days)
+>DOGFOOD     ? days  
+MPAC         ? days  
+PROD         4 days   
+BLACKFOREST  9 days  
+FAIRFAX      9 days  
+MOONCAKE     9 days
+
 1) Register your extension with Azure portal framework by raising a pull request to the appropriate extension config json. eg: [extensions.dogfood.json](https://msazure.visualstudio.com/One/_git/AzureUX-PortalFx?path=%2Fsrc%2FRDPackages%2FOneCloud%2FExtensions.dogfood.json&version=GBdev), [extensions.prod.json](https://msazure.visualstudio.com/One/_git/AzureUX-PortalFx?path=%2Fsrc%2FRDPackages%2FOneCloud%2FExtensions.prod.json&version=GBdev) etc,. If you are disabling the extension in the given environment(eg: "flags": "Disabled"), you do not have to increment the extension count. 
 2) If you are NOT using disabled flag, you must increment the extension count in [DeploymentSettingsTests.cs](https://msazure.visualstudio.com/One/_git/AzureUX-PortalFx?path=%2Fsrc%2FStbPortal%2FWebsite.Server.Tests%2FDeploymentSettingsTests.cs&version=GBdev) 
 ![storage](./../media/portalfx-extensions-onboarding/extension-count.png)
